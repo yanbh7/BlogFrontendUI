@@ -1,0 +1,12 @@
+{
+  "name": "@blog/common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "element-plus": "^2.9.4"
+  }
+}

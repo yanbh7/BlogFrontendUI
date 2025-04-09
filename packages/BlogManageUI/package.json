@@ -1,0 +1,12 @@
+{
+  "name": "blogmanageui",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.4.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "build": "vite build"
+  }
+}

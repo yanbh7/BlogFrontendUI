@@ -1,0 +1,56 @@
+{
+  "name": "blogfrontendui",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "dev:blog": "pnpm run -C packages/BlogUI dev",
+    "dev:blogManage": "pnpm run -C packages/BlogManageUI dev",
+    "dev:all": "concurrently \"pnpm run -C packages/BlogUI dev\" \"pnpm run -C packages/BlogManageUI dev\"",
+    "build:blog": "pnpm run -C packages/BlogUI build",
+    "build:blogManage": "pnpm run -C packages/BlogManageUI build",
+    "build:all": "concurrently \"pnpm run -C packages/BlogUI build\" \"pnpm run -C packages/BlogManageUI build\"",
+    "preview:blog": "pnpm run -C packages/BlogUI preview",
+    "preview:blogManage": "pnpm run -C packages/BlogManageUI preview",
+    "preview:all": "concurrently \"pnpm run -C packages/BlogUI preview\" \"pnpm run -C packages/BlogManageUI preview\"",
+    "lint": "eslint . --fix",
+    "format": "prettier . --write"
+  },
+  "dependencies": {
+    "@blog/common": "workspace:*",
+    "@wangeditor/editor-for-vue": "catalog:",
+    "axios": "catalog:",
+    "echarts": "catalog:",
+    "element-plus": "catalog:",
+    "highlight.js": "catalog:",
+    "lodash": "catalog:",
+    "moment": "catalog:",
+    "pinia": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "catalog:",
+    "@vue/eslint-config-prettier": "catalog:",
+    "autoprefixer": "catalog:",
+    "concurrently": "catalog:",
+    "eslint": "catalog:",
+    "eslint-plugin-vue": "catalog:",
+    "less": "catalog:",
+    "postcss": "catalog:",
+    "prettier": "catalog:",
+    "rollup-plugin-visualizer": "catalog:",
+    "tailwindcss": "catalog:",
+    "unplugin-auto-import": "catalog:",
+    "unplugin-vue-components": "catalog:",
+    "vite": "catalog:"
+  },
+  "keywords": [
+    "vue",
+    "blog",
+    "monorepo"
+  ],
+  "author": "Huey",
+  "license": "ISC",
+  "packageManager": "pnpm@10.4.1"
+}
