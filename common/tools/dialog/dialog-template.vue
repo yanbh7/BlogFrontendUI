@@ -31,8 +31,12 @@
 <script>
 import { toRefs } from 'vue';
 import useDialog from './use-dialog.js';
+import { QuestionFilled } from '@element-plus/icons-vue';
 
 export default {
+  components: {
+    QuestionFilled,
+  },
   props: {
     showFooter: Boolean, // 是否无Footer
     isDrag: Boolean,
@@ -73,22 +77,22 @@ export default {
 <style lang="less" scoped>
 .tooltip {
   color: black;
-  margin-left: 0.04rem;
-  font-size: 0.16rem;
+  margin-left: 0.25rem; // 0.04rem * 6.25
+  font-size: 1rem; // 0.16rem * 6.25
 }
 :deep(.el-dialog) {
   .el-dialog__footer {
-    padding: 0.25rem 0 0.1rem 0.1rem;
+    padding: 1.5625rem 0 0.625rem 0.625rem; // 0.25rem * 6.25, 0.1rem * 6.25
 
     .el-button--small {
       padding: 0;
     }
     .el-button {
-      height: 0.3rem;
-      line-height: 0.3rem;
+      height: 1.875rem; // 0.3rem * 6.25
+      line-height: 1.875rem; // 0.3rem * 6.25
     }
     .el-button > span {
-      margin: 0 0.1rem;
+      margin: 0 0.625rem; // 0.1rem * 6.25
     }
   }
 }

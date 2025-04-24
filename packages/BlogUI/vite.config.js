@@ -28,7 +28,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  base: '/huey/blog',
+  base: '/huey/blog/',
   server: {
     host: 'localhost.huey.com',
     port: 8080,
@@ -37,10 +37,19 @@ export default defineConfig({
     outDir: '../dist/BlogUI', // 指定输出路径
     assetsDir: 'assets', // 指定生成静态文件目录
     assetsInlineLimit: '4096', // 小于此阈值的导入或引用资源将内联为 base64 编码
-    cssCodeSplit: true, // 启用 CSS 代码拆分
+    cssCodeSplit: false, // 启用 CSS 代码拆分
     sourcemap: false, // 构建后是否生成 source map 文件
     emptyOutDir: true, // 构建时清空该目录
     chunkSizeWarningLimit: 500, // chunk 大小警告的限制
+    // rollupOptions: {
+    //   output: {
+    //     manualChunks: (id) => {
+    //       if (id.includes('node_modules')) {
+    //         return 'vendor';
+    //       }
+    //     },
+    //   },
+    // },
   },
 });
 

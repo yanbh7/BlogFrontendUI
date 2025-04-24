@@ -1,18 +1,32 @@
 <template>
-  <div class="header fixed">
+  <div class="header flex justify-between items-center px-6 py-2 h-12 shadow-[0_0_10px_#999] bg-white">
     <h3>
-      <router-link to="/" class="cursor-pointer select-none" @click="toHome">Huey的个人博客</router-link>
+      <RouterLink
+        to="/"
+        class="font-courier cursor-pointer select-none text-[20px] font-bold text-gray-700"
+        @click="toHome"
+      >
+        Huey的个人博客
+      </RouterLink>
     </h3>
-    <ul class="p-10 flex items-center">
-      <li v-for="item in tagList" :key="item.tid" :class="{ active: activeItem == item.tid }" @click="changeItem(item)">
+    <ul class="px-10 flex items-center h-full">
+      <li
+        v-for="item in tagList"
+        :key="item.tid"
+        :class="[
+          'h-9 leading-9 px-4 text-gray-700 text-center cursor-pointer',
+          activeItem == item.tid && 'bg-[rag(45, 140, 240)] text-white',
+        ]"
+        @click="changeItem(item)"
+      >
         {{ item.tagname }}
       </li>
     </ul>
     <div class="right">
-      <el-button type="text" v-if="!isLogin" @click="loginModal = true">登录</el-button>
+      <el-button v-if="!isLogin" type="primary" @click="login">登录</el-button>
       <span v-else>
         欢迎
-        <span style="display: inline-block; font-weight: 600; padding-left: 8px; cursor: pointer" @click="logout">
+        <span @click="logout">
           {{ uname }}
         </span>
       </span>
@@ -20,19 +34,18 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { toRefs } from 'vue';
-import { ElButton } from 'element-plus';
+import { $dialog } from '../../utils';
+import SignInVue from './sign-in.vue';
 
-export default {
-  components: { ElButton },
-  setup(props, ctx) {
-    return {};
-  },
+const login = () => {
+  $dialog({
+    component: SignInVue,
+    dialogOpt: {
+      title: '登录',
+      width: '30%',
+    },
+  });
 };
 </script>
-
-<style lang="less" scoped>
-.header {
-}
-</style>

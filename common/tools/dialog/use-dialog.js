@@ -1,5 +1,5 @@
 import { reactive, nextTick, getCurrentInstance } from 'vue';
-import orderBy from 'lodash/orderBy';
+import orderBy from 'lodash-es/orderBy';
 
 class DialogState {
   orderBtns = [];

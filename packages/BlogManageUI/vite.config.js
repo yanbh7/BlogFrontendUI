@@ -21,7 +21,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  base: '/blog/manage',
+  base: '/blog/manage/',
   server: {
     host: 'localhost.huey.com',
     port: 8081,

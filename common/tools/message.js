@@ -1,4 +1,6 @@
 import { ElMessage, ElMessageBox } from 'element-plus';
+import 'element-plus/theme-chalk/el-message.css';
+import 'element-plus/theme-chalk/el-message-box.css';
 
 export function showMessage({ message, type = 'info', duration = 3000, options = {} }) {
   ElMessage({
@@ -30,11 +32,17 @@ const messageInfo = (message, options) => {
 const messageConfirm = (message, title, options) => {
   return new Promise((resolve) => {
     ElMessageBox.confirm(message, title, {
-      callback: (action) => {
-        resolve(action);
-      },
+      cancelButtonText: '取消',
+      confirmButtonText: '确定',
+      type: 'warning',
       ...options,
-    });
+    })
+      .then(() => {
+        resolve(true);
+      })
+      .catch(() => {
+        resolve(false);
+      });
   });
 };
 

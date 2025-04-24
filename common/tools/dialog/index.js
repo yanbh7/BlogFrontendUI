@@ -1,6 +1,5 @@
 import { h } from 'vue';
-import merge from 'lodash/merge';
-import omit from 'lodash/omit';
+import { merge, omit } from 'lodash-es';
 import DialogTemplate from './dialog-template.vue';
 
 const OMIT_KEYS = ['props', 'height']; // 升级之后冗余参数,需要剔除
@@ -52,12 +51,12 @@ const MergeHelper = {
   init() {
     this.data.dialog.footer = {
       ok: this.merge({
-        text: 'public.confirmButtonText',
+        text: '确认',
         order: 0,
         type: 'primary',
       }),
       cancel: this.merge({
-        text: 'public.cancelButtonText',
+        text: '取消',
         order: 1,
         type: 'default',
       }),

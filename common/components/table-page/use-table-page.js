@@ -1,6 +1,5 @@
 import { getCurrentInstance, reactive, watch, computed } from 'vue';
-import merge from 'lodash/merge';
-import pick from 'lodash/pick';
+import { merge, pick } from 'lodash-es';
 import { $warning } from '../../tools/message.js';
 import { getPageDefault, getBtnDefault, getSearchDefault, getTableDefault } from './config.js';
 

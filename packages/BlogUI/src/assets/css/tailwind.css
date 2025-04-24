@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* This won't be included in your compiled CSS unless you actually use it */
+  .bordered-b-1 {
+    @apply border-b-[#ccc] border-b-[1px];
+  }
+
+  .bordered-b-2 {
+    @apply border-b-[#f15656] border-b-[2px];
+  }
+
+  .blog-item {
+    @apply relative mx-4 pl-4 h-10 text-sm leading-10 overflow-hidden text-ellipsis 
+    bordered-b-1 border-dashed whitespace-nowrap cursor-pointer
+    hover:text-[#2d8cf0] hover:border-b-[1px] hover:border-b-[#2d8cf0] 
+    before:absolute before:top-4 before:left-0 before:w-[6px] before:h-[6px] before:bg-[#2d8cf0] before:rounded-[50%];
+  }
+}
